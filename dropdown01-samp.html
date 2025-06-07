@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Dropdown Menu</title>
+  <style>
+    .dropdown, .dropdown-tail, .btn {
+    position: absolute;
+    border: 2px solid;
+    transition: .6s;
+  }
+
+  .btn { /*to make buttons invisible when the menu is closed*/
+	background: transparent;
+	color: transparent;
+}
+  
+  .dropdown {
+    left: 10px;
+    width: 80px;
+    height: 80px;
+    --btn-count: 5; 
+  }
+  
+  .dropdown:hover {
+    height: calc(100px + (var(--btn-count) * 50px));
+  }
+  
+  .dropdown-tail {
+    left: 75px;
+    width: 40px;
+    height: 80px;
+  }
+  
+  .dropdown:hover .dropdown-tail {
+    height: calc(30px + (var(--btn-count) * 50px));
+  }
+
+
+  .btn {
+    top: 0px;
+    width: 75px;
+    padding: 10px 5px;
+
+  }
+  
+  .dropdown:hover .btn {
+    color: white;
+  }
+
+  .dropdown:hover .btn:nth-child(1) { top: 90px; background: #ffd0ba; }
+  .dropdown:hover .btn:nth-child(2) { top: 140px; background: #ffb9b0; }
+  .dropdown:hover .btn:nth-child(3) { top: 190px; background: #ffa2b0; }
+  .dropdown:hover .btn:nth-child(4) { top: 240px; background: #fd8dba; }
+  .dropdown:hover .btn:nth-child(5) { top: 290px; background: #ec7cca; }
+  .dropdown:hover .btn:nth-child(6) { top: 340px; background: #cd72de; }
+  .dropdown:hover .btn:nth-child(7) { top: 390px; background: #9c71f2; }
+  
+  .reorder-btn {
+    position: relative;
+    left: 1.5px;
+    font-size: 15px;
+    padding: 9px 12px;
+  }
+  
+  .reorder-btn.highlighted {
+    background-color: #00000050;
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="dropdown">
+    <button class="btn"><img src="path/to/icon/griff.png" alt="Griff" width="32" height="32"> Griff</button>
+    <button class="btn">Item 2</button>
+    <button class="btn">Item 3</button>
+    <button class="btn">Item 4</button>
+    <button class="btn">Item 5</button>
+    <button class="btn">Item 6</button>
+
+    <div class="dropdown-tail">
+      <button class="reorder-btn">⇅</button>
+    </div>
+  </div>
+
+    <div class="dropdown" style="left: 50%;">
+    <button class="btn"><img src="path/to/icon/griff.png" alt="Griff" width="32" height="32"> Griff</button>
+    <button class="btn">Item 2</button>
+    yes, reorder btn is optional 
+    </div>
+    
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js">
+    //import sortable JS
+  </script>
+  <script src="dropdown01.js"></script>
+
+</body>
+</html>
