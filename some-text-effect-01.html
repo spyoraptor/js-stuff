@@ -1,0 +1,63 @@
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .arc-text {
+    font-size: 2rem;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    opacity: 0;
+    animation: arcMove 1s ease-out;
+    transform-origin: center;
+  }
+  
+  @keyframes arcMove {
+    0% {
+      transform: translateX(40vw) rotate(-70deg) translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0vw) rotate(0deg);
+      opacity: 1;
+    }
+  }
+</style>
+
+<div class="container">
+    <p class="arc_fulltext"> lalala </p>
+  </div>
+
+<script>
+
+window.onload = function () {
+  const textElement = document.querySelector('.arc_fulltext'); 
+  const textFull = textElement.innerText.trim(); 
+  const letters = textFull.split(''); 
+  const delayInterval = 0.1; 
+  const letterSpacing = 13; 
+
+  textElement.innerHTML = ''; 
+  textElement.style.position = 'relative';
+
+  letters.forEach((letter, index) => {
+    const letterElement = document.createElement('span');
+    letterElement.classList.add('arc-text');
+    letterElement.innerText = letter;
+
+    letterElement.style.animationDelay = `${delayInterval * index}s`;
+    letterElement.style.position = 'absolute'; 
+    letterElement.style.left = `${index * letterSpacing}px`;
+    letterElement.style.opacity = 1;
+
+    textElement.appendChild(letterElement);
+  });
+};
+
+</script>
