@@ -1,5 +1,5 @@
 # js-stuff
-website liiink [clickme](https://spyoraptor.github.io)
+website liiink [clickme](https://spyoraptor.github.io/js-stuff/)
 its just me messing around with js. im very beginner so mind the bad code LOL but i will update from time to time as i improve. i will be using my creations on my own website teehee
 ill try to update often :3
 will organize sometime in the near future i guess
